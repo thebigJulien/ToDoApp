@@ -15,9 +15,8 @@ body {
 #root {
   .App {
     height: 100vh;
-
     header {
-      height: 15vh;
+      height: 10vh;
       background-color: $navBg;
       display: flex;
       align-items: center;
@@ -30,10 +29,39 @@ body {
         text-decoration: none;
       }
     }
+    .empty {
+      height: 50%;
+      display: flex;
+      justify-content: center;
+      border: none;      
+      img {
+        height: 100%;
+        width: 100%;
+        border-radius: 10px;
+      }
+    }
+    .notification {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 100;
+      background: aliceblue;
+      color: black;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 10px;
+      display: flex;
+      justify-content: center;
+      img {
+        height: 30px;
+        margin-right: 5px;
+        border-radius: 5px;
+      }
+    }
 
     .todo, .done {
       background-color: $mainBg;
-      height: 45%;
+      height: 60%;
       margin-top: 0px;
       display: flex;
       flex-direction: column;
@@ -42,21 +70,21 @@ body {
         justify-content: space-between;
         border: 2.5px solid $navFontColor;
         border-radius: 10px;
-        width: 20%;
+        width: 50%;
         align-self: center;
         text-align: center;
-        margin: 5px;
+        margin: 4px;
         background-color: #DCDCDC;
         padding: 0 5px;
         font-size: 1.3rem;
         .btn {
           border-radius: 8px;
-          padding: 5px;
           background: $navFontColor;
           font-size: 1.3rem;
-          margin: 3px;
+          margin: 5px;
           border: 1.5px solid $navBg;
           font-size: 2rem;
+          width: 10%;
         }
       }
       h4 {

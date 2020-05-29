@@ -4,6 +4,7 @@ import Navigation from './navigation';
 import ToDo from './todo';
 import Done from './done';
 import Notification from './Notification';
+import ToDoForm from './FormTodo';
 
 
 
@@ -66,15 +67,22 @@ class App extends React.Component {
       });
     };
 
-      handleNotification = () => {
+
+    handleNotification = () => {
         this.setState({
           showNotification: false,
         });
     };
 
+    handleNewTodo = (todo) => {
+      //Add the new item to the state
+      let newItems = [...this.state.items, todo];
+      this.setState({ items: newItems });
+    };
+
   render() {
     let items = this.state.items;
-    let todos = items.filter((el) => el.status === false);
+    let toDos = items.filter((el) => el.status === false);
     let dones = items.filter((el) => el.status === true);
     let showNotification = this.state.showNotification;
 
@@ -83,7 +91,8 @@ return (
   <div className="App">
     <Navigation></Navigation>
     {showNotification && <Notification hideNotification={this.handleNotification}></Notification>}
-    <ToDo data={todos} callGrandpa={this.updateFam}></ToDo>
+    <ToDoForm addTodo={this.handleNewTodo}></ToDoForm>
+    <ToDo data={toDos} callGrandpa={this.updateFam}></ToDo>
     <Done data={dones} callGrandma={this.updateFam}></Done>
   </div>
     );

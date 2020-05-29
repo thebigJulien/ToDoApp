@@ -55,6 +55,8 @@ class App extends React.Component {
     };
   }
 
+  
+
     updateFam = (id) => {
       const newItems = this.state.items.map((el) => {
         if (el._id === id) el.status = !el.status;
@@ -76,8 +78,10 @@ class App extends React.Component {
 
     handleNewTodo = (todo) => {
       //Add the new item to the state
+      console.log(todo)
       let newItems = [...this.state.items, todo];
       this.setState({ items: newItems });
+      
     };
 
   render() {

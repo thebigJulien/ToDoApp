@@ -25,13 +25,17 @@ class ToDoForm extends React.Component {
         // Pass the new todo to the parent
         this.props.addTodo(newTodo);
       };
+
+      handleChange = (e) => {
+        this.setState({ todo: e.target.value });
+  };
     render() {
 
 
 
         return(
             <form onSubmit={this.handleSubmit} >
-                <input placeholder="write something"></input>
+                <input placeholder="write something" onChange={this.handleChange}></input>
                 <button>ADD</button>
             </form>
         )

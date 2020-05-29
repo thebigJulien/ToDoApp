@@ -80,10 +80,11 @@ body {
     }
     .todo, .done {
       background-color: $mainBg;
-      height: 60%;
+      height: 400px;
       margin-top: 0px;
       display: flex;
       flex-direction: column;
+
       div {
         display: flex;
         justify-content: space-between;
@@ -110,6 +111,9 @@ body {
         text-align: center;
         font-size: 2rem;
       }
+    }
+    .todo {
+      min-height: 50%;
     }
   }
 }

@@ -14,7 +14,7 @@ body {
 
 #root {
   .App {
-    height: 100vh;
+    height: 100%;
     header {
       height: 10vh;
       background-color: $navBg;
@@ -75,16 +75,17 @@ body {
         width: 10%;
         border-radius: 0 20px 20px 0;
         color: #A52A2A;
-        border: 1px solid $mainBg
+        border: 2px solid $mainBg;
+        font-weight: bold;
       }
     }
     .todo, .done {
       background-color: $mainBg;
-      height: 400px;
+      height: 50%;
       margin-top: 0px;
       display: flex;
       flex-direction: column;
-
+      min-height: 800px;
       div {
         display: flex;
         justify-content: space-between;

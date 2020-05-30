@@ -20,8 +20,8 @@ class ToDoForm extends React.Component {
         };
     
         // Clean up the form
-        this.setState({ todo: '' });
-    
+
+
         // Pass the new todo to the parent
         this.props.addTodo(newTodo);
       };

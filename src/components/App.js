@@ -123,11 +123,8 @@ class App extends React.Component {
 
     handleNewTodo = (todo) => {
 
-      fetch("https://ds-todo-api.now.sh/todos", {
-        method: "POST",
-        headers: {"content-Type": "application/json"},
-        body: JSON.stringify(todo)
-      })
+      let API_URL = process.env.REACT_APP_URL;
+      fetch(API_URL) 
       .then(res => res.json())
       .then(newTodo => {
         let newItems = [...this.state.items, newTodo];
